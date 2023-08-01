@@ -31,19 +31,19 @@ def get_kr_be(v_adp_depol, v_adp_pi_depol):
 
 # Main function
 def main():
-    a = 0.18350639
-    b = 0.01073622
-    c = 0.15155544
+    a = 0.1696
+    b = 0.0077
+    c = 0.1515
 
     v_adp_depol = get_v_adp_depol(c)
     kr = get_kr(b)
     v_adp_pi_depol = get_adp_pi_depol(a, c)
     kr_be = get_kr_be(v_adp_depol, v_adp_pi_depol)
 
-    print(f"{'v_ADP_depol':<15}: {v_adp_depol:.3f}")
-    print(f"{'kr':<15}: {kr:.3f}")
-    print(f"{'v_ADP-Pi_depol':<15}: {v_adp_pi_depol:.3f}")
-    print(f"{'kr_BE':<15}: {kr_be:.3f}")
+    print(f"{'v_ADP_depol':<15}: {v_adp_depol:.4f}")
+    print(f"{'kr':<15}: {kr:.4f}")
+    print(f"{'v_ADP-Pi_depol':<15}: {v_adp_pi_depol:.4f}")
+    print(f"{'kr_BE':<15}: {kr_be:.4f}")
     print(f"{'kr_BE/kr':<15}: {kr_be/kr:.1f}")
 
 # Run main
