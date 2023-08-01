@@ -1,5 +1,14 @@
 #!/Users/roy/anaconda3/bin/python
 
+__author__ = "Ankit Roy"
+__copyright__ = "Copyright 2023, Bieling Lab, Max Planck Institute of Molecular Physiology"
+__credits__ = ["Ankit Roy"]
+__license__ = "GPLv3"
+__maintainer__ = "Ankit Roy"
+__email__ = "ankitroy.post@gmail.com"
+__status__ = "Production"
+__version__ = "1.0"
+
 import numpy as np
 import pandas as pd
 import sys
