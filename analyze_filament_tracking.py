@@ -6,7 +6,14 @@ This script is used to analyze filament length data tracked with JFilament.
 Please make sure that the JFilament output file is converted into a plottable CSV format.
 The plottable CSV format should contain two columns: frame and length.
 The script calculates the following parameters from the frame and length data:
-
+time 			-> elapsed time (s)
+length_nm 		-> filament length (nm)
+monomers 		-> number of actin monomers
+norm_time		-> time relative to start of depolymerization (s)
+norm_nonomers	-> max number of monomers - number of monomers at time instance
+label			-> identifier for actin type
+filename		-> name of plottable JFilament output file from which data was analyzed
+velocity		-> instant polymerization velocity
 
 Input: <filament-length-tracked-filename>.csv
 Output: <filament-length-tracked-filename>_analysed.csv
@@ -109,3 +116,4 @@ main()
 
 # Ankit Roy
 # 8th December, 2022
+# 9th August, 2023		>>		Updated docstring.
