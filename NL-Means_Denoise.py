@@ -79,3 +79,5 @@ if __name__ == '__main__':
 #       -->     Now runs parallel. Each frame is processed by a different CPU.
 #       -->     Removed progress bar, instead reported frames denoised.
 #       -->     Now does not check contrast while saving TIF files.
+# 1st August, 2023
+#		-->		Updated docstring.
