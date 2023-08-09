@@ -1,5 +1,18 @@
 #!/Users/roy/anaconda3/bin/python
 
+"""
+
+This script is used to analyze filament length data tracked with JFilament.
+Please make sure that the JFilament output file is converted into a plottable CSV format.
+The plottable CSV format should contain two columns: frame and length.
+The script calculates the following parameters from the frame and length data:
+
+
+Input: <filament-length-tracked-filename>.csv
+Output: <filament-length-tracked-filename>_analysed.csv
+
+"""
+
 __author__ = "Ankit Roy"
 __copyright__ = "Copyright 2023, Bieling Lab, Max Planck Institute of Molecular Physiology"
 __credits__ = ["Ankit Roy"]

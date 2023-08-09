@@ -1,8 +1,12 @@
 #!/Users/roy/anaconda3/bin/python
 
-# This script is used to apply NL-Means denoising on a image series
-# Input: <TIF-file image series>
-# Output: <TIF-file image series>
+"""
+
+This script is used to apply NL-Means denoising on a image series.
+Input: <TIF-file image series>
+Output: <TIF-file image series>
+
+"""
 
 __author__ = "Ankit Roy"
 __copyright__ = "Copyright 2023, Bieling Lab, Max Planck Institute of Molecular Physiology"
