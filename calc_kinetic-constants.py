@@ -1,5 +1,29 @@
 #!/Users/roy/anaconda3/bin/python
 
+"""
+
+This script is used to calculate actin depolymerization kinetic constants.
+Given parameters for an exponential decay model of 1/v_depol vs filament age, calculates the following:
+v_ADP_depol		-> depolymerization velocity of ADP-actin
+v_ADP-Pi_depol	-> depolymerization velocity of ADP-Pi-actin
+kr				-> Pi release rate
+kr_BE			-> Pi release rate from the barbed end
+kr_BE/kr		-> kr_BE fold increase in comparison to kr
+
+Exponential decay model is expressed as:
+y = a*exp(-bx) + c
+where:
+x = filament age
+y = 1/v_depol
+a + c = 1/v_ADP-Pi_depol
+b = kr
+c = 1/v_ADP_depol
+
+k_off_adp_pi is obtained from https://doi.org/10.1073/pnas.0702510104
+kr_BE is obtained as described in https://doi.org/10.1371/journal.pbio.1001161
+
+"""
+
 __author__ = "Ankit Roy"
 __copyright__ = "Copyright 2023, Bieling Lab, Max Planck Institute of Molecular Physiology"
 __credits__ = ["Ankit Roy"]
@@ -51,3 +75,5 @@ main()
 
 # Ankit Roy
 # 21st February, 2023
+# 9th August, 2023
+#		-->	Updated docstring.
