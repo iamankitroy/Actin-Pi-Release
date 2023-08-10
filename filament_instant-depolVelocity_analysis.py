@@ -1,5 +1,63 @@
 #!/Users/roy/anaconda3/bin/python
 
+"""
+
+This script is used to calculate filament age and filament depolymerization velocity.
+Filament age is calculated as a function of time spent between polymerization and depolymerization.
+Depolymerization velocity is calculated with varying window sizes.
+Fit parameters for a kinetic model of 1/v_depol as a function of filament age are calculated for different window sizes.
+
+Exponential decay model is expressed as:
+y = a*exp(-bx) + c
+where:
+x = filament age
+y = 1/v_depol
+a + c = 1/v_ADP-Pi_depol
+b = kr
+c = 1/v_ADP_depol
+
+Input: <cumulative-filament-length-data-file.csv>
+Output:
+	<filename>_velocity_all-datasets.csv
+	<filename>_velocity_optimal-datasets.csv
+	<filename>_velocity_all-parameters.csv
+	<filename>_velocity_optimal-parameters.csv
+
+Input data file should contain the following columns:
+norm_time		-> time since depolymerization (s)
+mean_monomers	-> mean filament length in monomers calculated from multiple single filament tracked data
+sd [optional]	-> standard deviation of mean filament length
+se [optional]	-> standard error of mean filament length
+
+Parameters for the exponential decay model are estimated for each window size.
+Optimal parameters are obtained such that the average percentage standard deviation error in estimation is less than a threshold value (10% recommended).
+
+Velocity dataset files contain the following fields:
+norm_time		-> as in input file
+mean_monomers	-> as in input file
+sd				-> as in input file
+se				-> as in input file
+age				-> filament age (s)
+velocity		-> polymerization velocity (monomers/s)
+norm_velocity	-> depolymerization velocity 1/v_depol (s/monomer)
+window_size		-> window size used for calculating velocity of the centered time point
+
+Parameter files contain the following fields:
+window_size		-> window size used for calculating velocity of the centered time point
+a				-> predicted fit parameter a
+b				-> predicted fit parameter b
+c				-> predicted fit parameter c
+a_err			-> standard deviation error in prediction of a
+b_err			-> standard deviation error in prediction of b
+c_err			-> standard deviation error in prediction of c
+a_per_err		-> percentage standard deviation error in prediction of a
+b_per_err		-> percentage standard deviation error in prediction of b
+c_per_err		-> percentage standard deviation error in prediction of c
+avg_per_err		-> average percentage standard deviation error in parameter prediction
+sym_window_size	-> symmetric window unit size
+
+"""
+
 __author__ = "Ankit Roy"
 __copyright__ = "Copyright 2023, Bieling Lab, Max Planck Institute of Molecular Physiology"
 __credits__ = ["Ankit Roy"]
@@ -324,3 +382,5 @@ main()
 #           - <file-name>_optimal-parameters.csv : parameter stats calculated for optimal window sizes
 #   >> Added to toggle to chose if output files are wanted to be written.
 #   >> Generates a plot of parameter prediction average error when toggle is switched to True.
+# 10th August, 2023
+#	>> Updated docstrings.
