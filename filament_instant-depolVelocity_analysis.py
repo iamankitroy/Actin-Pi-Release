@@ -383,4 +383,4 @@ main()
 #   >> Added to toggle to chose if output files are wanted to be written.
 #   >> Generates a plot of parameter prediction average error when toggle is switched to True.
 # 10th August, 2023
-#	>> Updated docstrings.
+#   >> Updated docstrings.
