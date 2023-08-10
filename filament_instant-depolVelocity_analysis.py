@@ -18,43 +18,43 @@ c = 1/v_ADP_depol
 
 Input: <cumulative-filament-length-data-file.csv>
 Output:
-	<filename>_velocity_all-datasets.csv
-	<filename>_velocity_optimal-datasets.csv
-	<filename>_velocity_all-parameters.csv
-	<filename>_velocity_optimal-parameters.csv
+    <filename>_velocity_all-datasets.csv
+    <filename>_velocity_optimal-datasets.csv
+    <filename>_velocity_all-parameters.csv
+    <filename>_velocity_optimal-parameters.csv
 
 Input data file should contain the following columns:
-norm_time		-> time since depolymerization (s)
-mean_monomers	-> mean filament length in monomers calculated from multiple single filament tracked data
-sd [optional]	-> standard deviation of mean filament length
-se [optional]	-> standard error of mean filament length
+norm_time       -> time since depolymerization (s)
+mean_monomers   -> mean filament length in monomers calculated from multiple single filament tracked data
+sd [optional]   -> standard deviation of mean filament length
+se [optional]   -> standard error of mean filament length
 
 Parameters for the exponential decay model are estimated for each window size.
 Optimal parameters are obtained such that the average percentage standard deviation error in estimation is less than a threshold value (10% recommended).
 
 Velocity dataset files contain the following fields:
-norm_time		-> as in input file
-mean_monomers	-> as in input file
-sd				-> as in input file
-se				-> as in input file
-age				-> filament age (s)
-velocity		-> polymerization velocity (monomers/s)
-norm_velocity	-> depolymerization velocity 1/v_depol (s/monomer)
-window_size		-> window size used for calculating velocity of the centered time point
+norm_time       -> as in input file
+mean_monomers   -> as in input file
+sd              -> as in input file
+se              -> as in input file
+age             -> filament age (s)
+velocity        -> polymerization velocity (monomers/s)
+norm_velocity   -> depolymerization velocity 1/v_depol (s/monomer)
+window_size     -> window size used for calculating velocity of the centered time point
 
 Parameter files contain the following fields:
-window_size		-> window size used for calculating velocity of the centered time point
-a				-> predicted fit parameter a
-b				-> predicted fit parameter b
-c				-> predicted fit parameter c
-a_err			-> standard deviation error in prediction of a
-b_err			-> standard deviation error in prediction of b
-c_err			-> standard deviation error in prediction of c
-a_per_err		-> percentage standard deviation error in prediction of a
-b_per_err		-> percentage standard deviation error in prediction of b
-c_per_err		-> percentage standard deviation error in prediction of c
-avg_per_err		-> average percentage standard deviation error in parameter prediction
-sym_window_size	-> symmetric window unit size
+window_size     -> window size used for calculating velocity of the centered time point
+a               -> predicted fit parameter a
+b               -> predicted fit parameter b
+c               -> predicted fit parameter c
+a_err           -> standard deviation error in prediction of a
+b_err           -> standard deviation error in prediction of b
+c_err           -> standard deviation error in prediction of c
+a_per_err       -> percentage standard deviation error in prediction of a
+b_per_err       -> percentage standard deviation error in prediction of b
+c_per_err       -> percentage standard deviation error in prediction of c
+avg_per_err     -> average percentage standard deviation error in parameter prediction
+sym_window_size -> symmetric window unit size
 
 """
 
